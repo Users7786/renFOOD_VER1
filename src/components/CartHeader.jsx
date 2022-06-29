@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import Packet from "../icons/packet_1.png";
+import Avatar from "../icons/avatar.png";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -13,17 +16,17 @@ const Wrapper = styled.div`
 
 const OrderSmth = styled.div`
   position: absolute;
-  left: 0%;
+  left: 30%;
   right: 0%;
   top: 15.22%;
   bottom: 15.22%;
 `;
 
 const Menu = styled.div`
-  position: absolute;
-  left: 0%;
+  position: relative;
+  left: 120px;
   right: 0%;
-  top: 15.22%;
+  top: 0%;
   bottom: 15.22%;
 `;
 
@@ -63,15 +66,73 @@ const SearchButton = styled.button`
   z-index: 1000;
 `;
 
+const Cart = styled.div`
+  position: absolute;
+  width: 137px;
+  height: 43px;
+  left: 894px;
+  top: 10%;
+`;
+
+const CartText = styled.p`
+  position: absolute;
+  width: 83px;
+  height: 21px;
+  left: 50px;
+  top: 20%;
+
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 94.8%;
+  /* identical to box height, or 21px */
+
+  color: #000000;
+`;
+
+const Pack = styled.div`
+  position: absolute;
+  width: 138px;
+  height: 43px;
+  left: 120%;
+  top: 0px;
+`;
+
+const PackText = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 21px;
+  left: 160%;
+  top: 20%;
+
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 94.8%;
+  /* identical to box height, or 21px */
+
+  color: #000000;
+`;
+
+const Avtr = styled.div`
+  position: absolute;
+  width: 53px;
+  height: 53px;
+  left: 1252px;
+  top: 0px;
+`;
+
 function CartHeader() {
   return (
     <Wrapper>
       <Menu>
-        <MenuIcon />
+        <MenuIcon sx={{ width: 51, height: 51 }} />
       </Menu>
 
       <OrderSmth>
-        <OrderSmthText>Закажите что-нибудь</OrderSmthText>
+        <OrderSmthText>Закажи что-нибудь</OrderSmthText>
       </OrderSmth>
 
       <Form>
@@ -80,6 +141,17 @@ function CartHeader() {
           <SearchIcon sx={{ fontSize: 23 }} />
         </SearchButton>
       </Form>
+      <Cart>
+        <ShoppingCartOutlinedIcon sx={{ width: 33, height: 33 }} />
+        <CartText>Заказы</CartText>
+        <Pack>
+          <img src={Packet} alt="packet img" />
+        </Pack>
+        <PackText>Пакеты</PackText>
+      </Cart>
+      <Avtr>
+        <img src={Avatar} alt="avatar"></img>
+      </Avtr>
     </Wrapper>
   );
 }
